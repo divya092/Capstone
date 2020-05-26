@@ -1,0 +1,42 @@
+Data Science Capstone: Final Project
+========================================================
+author: Divya Shree H P
+date: 26/05/2020
+autosize: true
+
+Introduction
+========================================================
+
+This presentation is created as part of the requirement for the Coursera Data Science Capstone Course.
+
+The goal of the project is to build a predictive text model combined with a shiny app UI that will predict the next word as the user types a sentence similar to the way most smart phone keyboards are implemented today using the technology of Swiftkey.
+
+[Shiny App] - [https://shree-divya092.shinyapps.io/Capstone/]
+
+
+Shiny Application
+========================================================
+
+Shiny application is created that uses a text prediction algorithm to predict the next word based on text entered by a user.
+
+The application will suggest the next word in a sentence using an n-gram algorithm. An n-gram is a contiguous sequence of n words from a given sequence of text.
+
+The text used to build the predictive text model came from a large corpus of blogs, news and twitter data. N-grams were extracted from the corpus and then used to build the predictive text model.
+
+Various methods were explored to improve speed and accuracy using natural language processing and text mining techniques.
+
+Word Prediction Model
+========================================================
+
+Explanation of the logic for next word prediction app is as below:
+
+1. Compressed data sets containing descending frequency sorted n-grams are first loaded.
+User input words are cleaned in the similar way as before prior to prediction of the next word.
+2. For prediction of the next word, Quadgram is first used (first three words of Quadgram are the last three words of the user provided sentence).
+3. If no Quadgram is found, back off to Trigram (first two words of Trigram are the last two words of the sentence).
+4. If no Trigram is found, back off to Bigram (first word of Bigram is the last word of the sentence)
+
+Application User Interface
+========================================================
+
+<span style="color:blue; font-weight:bold;font-size:0.7em">A Shiny application was developed based on the next word prediction model described previously as shown below. </span><img src="./www/app.png"></img>
